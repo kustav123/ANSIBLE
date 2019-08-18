@@ -1,0 +1,17 @@
+---
+   - hosts: switch
+     gather_facts: no
+     connection: local
+
+     tasks:
+
+       - name: CONFIGURE Login ON CISCO DEVICES
+         ios_banner:
+          banner: login
+          text: "{{ lookup('file', '/etc/ansible/banner.cfg') }}"
+          state: present
+       - name: CONFIGURE  EXEC BANNER ON CISCO DEVICES
+         ios_banner:
+          banner: exec
+          text: "{{ lookup('file', '/etc/ansible/banner2.cfg') }}"
+          state: present
