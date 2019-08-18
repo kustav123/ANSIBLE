@@ -8,10 +8,10 @@
        - name: CONFIGURE Login ON CISCO DEVICES
          ios_banner:
           banner: login
-          text: "{{ lookup('file', '/etc/ansible/banner.cfg') }}"
+          text: "{{ lookup('file', 'PATH/banner.cfg') }}" #change the path
           state: present
        - name: CONFIGURE  EXEC BANNER ON CISCO DEVICES
          ios_banner:
           banner: exec
-          text: "{{ lookup('file', '/etc/ansible/banner2.cfg') }}"
+          text: "{{ lookup('file', 'PATH/banner2.cfg') }}" #change the path
           state: present
