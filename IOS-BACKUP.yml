@@ -14,4 +14,3 @@
         copy:
             content: "{{ show_run.stdout[0] }}"
             dest: "/etc/ansible/ios_backup/{{inventory_hostname}}-{{ansible_facts.date_time.date}}.txt"
-        
