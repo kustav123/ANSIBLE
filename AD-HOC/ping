@@ -1,0 +1,5 @@
+ansible  -m ping 172.16.20.1 # for ping a IP
+
+
+ansible  -m ping switch  # for ping a host group
+
