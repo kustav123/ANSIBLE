@@ -1,0 +1,10 @@
+---
+   - hosts: switch
+     gather_facts: no
+     connection: local
+
+     tasks:
+      - name: Change Host Name
+        ios_config: 
+         lines:
+          - hostname "{{ inventory_hostname }}" # will set the device host name as per mentioned in hosts file. you may chang as you want
