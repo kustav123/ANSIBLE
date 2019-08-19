@@ -1,0 +1,15 @@
+---
+    - name: IOS show version 
+      hosts: switch
+      gather_facts: no
+
+      tasks:
+
+         - name: GATHERING FACTS
+           ios_facts:
+               
+         - name:  Save to File
+           lineinfile:
+              dest: "/etc/ansible/inv.txt"
+              line: "{{ ansible_net_hostname + ' _ ' + ansible_net_model + ' _ ' +  ansible_net_serialnum + ' _ ' + ansible_net_version}}"
+              insertafter: EOF
