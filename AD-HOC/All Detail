@@ -1,0 +1,5 @@
+ansible -m ios_facts x.x.x.x -c network_cli #for a particular host
+
+
+
+ansible -m ios_facts switch -c network_cli #for a host grop as per host file

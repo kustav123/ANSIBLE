@@ -1,0 +1,17 @@
+---
+   - hosts: switch
+     gather_facts: no
+     connection: local
+
+     tasks:
+
+       - name: CONFIGURE Login ON CISCO DEVICES
+         ios_banner:
+          banner: login
+          text: "{{ lookup('file', 'PATH/banner.cfg') }}" #change the path
+          state: present
+       - name: CONFIGURE  EXEC BANNER ON CISCO DEVICES
+         ios_banner:
+          banner: exec
+          text: "{{ lookup('file', 'PATH/banner2.cfg') }}" #change the path
+          state: present
