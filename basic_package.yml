@@ -1,0 +1,23 @@
+---
+  - name: New VM
+    hosts: all
+    become: yes
+    become_user: root
+    tasks:
+      - name: Install a list of packages 
+        yum:
+          name: "{{ packages }}"
+        vars:
+          packages:
+          - vim
+          - net-tools
+   #### Run ansible-galaxy collection install ansible.posix        
+      - name: Disable Firewall and Selinux
+        ansible.posix.selinux:
+            policy: targeted
+            state: disabled
+     
+        service:
+          name: firewalld
+          state: stopped
+          enabled: no
